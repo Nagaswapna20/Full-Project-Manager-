@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Manager Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>ProjectManager</h2>
+        <ul>
+            <li onclick="showSection('dashboard')">Dashboard</li>
+            <li onclick="showSection('projects')">Projects</li>
+            <li onclick="showSection('teams')">Teams</li>
+            <li onclick="showSection('tasks')">Tasks</li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section">
+            <h1>Dashboard</h1>
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Projects</h3>
+                    <p id="total-projects">0</p>
+                </div>
+                <div class="card">
+                    <h3>Total Tasks</h3>
+                    <p id="total-tasks">0</p>
+                </div>
+                <div class="card">
+                    <h3>Completed Tasks</h3>
+                    <p id="completed-tasks">0</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h1>Projects</h1>
+            <button onclick="addProject()">Add Project</button>
+            <ul id="project-list"></ul>
+        </section>
+
+        <!-- Teams Section -->
+        <section id="teams" class="section">
+            <h1>Teams</h1>
+            <button onclick="addTeam()">Add Team</button>
+            <ul id="team-list"></ul>
+        </section>
+
+        <!-- Tasks Section -->
+        <section id="tasks" class="section">
+            <h1>Tasks</h1>
+            <button onclick="addTask()">Add Task</button>
+            <table id="task-table">
+                <thead>
+                    <tr>
+                        <th>Task Name</th>
+                        <th>Project</th>
+                        <th>Team</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
